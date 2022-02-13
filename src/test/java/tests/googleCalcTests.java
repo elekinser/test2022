@@ -73,26 +73,6 @@ public class googleCalcTests {
 
 
     }
-    @Test
-    @DisplayName("Кейс 2. Проверка деления на ноль")
-    public void test2() {
-        dateGooglePage.search("Калькулятор");
-        //6
-        dateGooglePage.six.click();
-        //:
-        dateGooglePage.division.click();
-        //0
-        dateGooglePage.zero.click();
-        //=
-        dateGooglePage.equally.click();
-        assertAll(
-                () -> assertEquals("6 ÷ 0 =", driver.findElement(By.cssSelector("div [jsname=\"VkJw6\"] span")).getText()),
-                () -> assertEquals("Infinity", driver.findElement(By.cssSelector("div [jsname=\"zLiRgc\"] span")).getText())
-        );
-
-
-    }
-
 
     @AfterAll
     public static void teardown() {
