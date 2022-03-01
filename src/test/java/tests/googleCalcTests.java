@@ -92,6 +92,21 @@ public class googleCalcTests {
 
 
     }
+    @Test
+    @DisplayName("Кейс 3. Проверка ошибки при отсутствии значения")
+    public void test3() {
+        dateGooglePage.search("Калькулятор");
+        //sin()
+        dateGooglePage.sin.click();
+        //=
+        dateGooglePage.equally.click();
+        assertAll(
+                () -> assertEquals("sin() =", driver.findElement(By.cssSelector("div [jsname=\"VkJw6\"] span")).getText()),
+                () -> assertEquals("Error", driver.findElement(By.cssSelector("div [jsname=\"zLiRgc\"] span")).getText())
+        );
+
+
+    }
     @AfterAll
     public static void teardown() {
         driver.quit();
